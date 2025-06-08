@@ -9,13 +9,13 @@ public:
             if(nums[mid] == target){
                 return true;
             } else if(nums[mid] > target){
-                if(nums[mid] < nums[e]){
+                if(nums[mid] <= nums[e]){
                     e = mid - 1;
                 } else {
                     s = mid + 1;
                 }
             } else if(nums[mid] < target){
-                if(nums[mid] > nums[e]){
+                if(nums[mid] >= nums[e]){
                     e = mid - 1;
                 } else {
                     s = mid + 1;
