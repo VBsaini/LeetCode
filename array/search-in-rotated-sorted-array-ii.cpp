@@ -8,14 +8,21 @@ public:
             int mid = (s+e)/2;
             if(nums[mid] == target){
                 return true;
-            } else if(nums[mid] > target){
+            }
+            
+            if (nums[mid] == nums[s]) {
+                s++;
+                continue;
+            }
+
+            if(nums[mid] > target){
                 if(nums[mid] <= nums[e]){
                     e = mid - 1;
                 } else {
                     s = mid + 1;
                 }
             } else if(nums[mid] < target){
-                if(nums[mid] >= nums[e]){
+                if(nums[mid] > nums[e]){
                     e = mid - 1;
                 } else {
                     s = mid + 1;
